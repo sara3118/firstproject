@@ -5,7 +5,7 @@ session_start();
 <html>
    <head>
       <meta charset="utf-8" />
-      <title>magali</title>
+      <title>HOMEPAGE</title>
   
        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 		
