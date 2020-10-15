@@ -1,0 +1,110 @@
+form{
+	width:100%;
+	background-color:#ccc;
+	padding:5px 0px; 
+}
+
+.c100{
+	width:100%;
+	margin:20px;
+}
+lable{
+	display:inline-block;
+	min-width:25%;
+}
+input[type="submit"]{
+	color:RGB(200,100,0);
+	border-radius:5px 10PX;
+	font-size:14px;
+	border:2px solid RDB(200,100,0);
+	
+}
+input [type="submit"]:hover{
+	background-color:RGB(200,100,0);
+	color:#fff;
+	cursor:pointer;
+	box-shadow:0px 0px 5px 0px #777;
+	
+}
+
+        .body{
+        padding-top:4.2rem;
+		padding-bottom:4.2rem;
+		--background:rgba(0, 0, 0, 0.76);
+        }
+        a{
+         text-decoration:none !important;
+         }
+         h1,h2,h3{
+         font-family: 'Kaushan Script', cursive;
+         }
+          .myform{
+		position: relative;
+		display: -ms-flexbox;
+		display: flex;
+		padding: 1rem;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		width: 100%;
+		pointer-events: auto;
+		background-color: #fff;
+		background-clip: padding-box;
+		border: 1px solid rgba(0,0,0,.2);
+		border-radius: 1.1rem;
+		outline: 0;
+		max-width: 500px;
+		 }
+         .tx-tfm{
+         text-transform:uppercase;
+         }
+         .mybtn{
+         border-radius:50px;
+         }
+        
+         .login-or {
+         position: relative;
+         color: #aaa;
+         margin-top: 10px;
+         margin-bottom: 10px;
+         padding-top: 10px;
+         padding-bottom: 10px;
+         }
+         .span-or {
+         display: block;
+         position: absolute;
+         left: 50%;
+         top: -2px;
+         margin-left: -25px;
+         background-color: #fff;
+         width: 50px;
+         text-align: center;
+         }
+         .hr-or {
+         height: 1px;
+         margin-top: 0px !important;
+         margin-bottom: 0px !important;
+         }
+         .google {
+         color:#666;
+         width:100%;
+         height:40px;
+         text-align:center;
+         outline:none;
+         border: 1px solid lightgrey;
+         }
+          form .error {
+         color: #ff0000;
+         }
+         #second{display:none;}
+		 
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }

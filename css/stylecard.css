@@ -1,0 +1,15 @@
+.livrecard{
+	box-shadow: 0 0 6px #ccc;
+	border-radius:15px;
+	font-style:italic;
+	
+	
+}
+.card-group{
+	display:flex;
+
+}
+.livrecard img{
+	width:100px;
+	height:100px;
+}

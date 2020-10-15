@@ -1,0 +1,135 @@
+.nav-link:hover .msborder{
+	
+	width:20px;
+	height:5px;
+	border-radius:5%;
+	background-color:green;
+}
+.menuhome{
+	min-width:1000px;
+	--position:absolute;
+	
+	--width:1000px;
+	--background-color: red;
+
+}
+.menuhome img{
+	--width:100%;
+	--height:100%;
+	--position:absolute;
+	
+	--width:1000px;
+	--background-color: red;
+
+}
+.col-5 img{
+	--padding-top:70px;
+	--width:700px;
+	border-radius:40%;
+}
+
+
+h1{
+	padding-left:40px;
+	padding-top:70px;
+}
+h2{
+	padding-left:40px;
+	padding-top:40px;
+
+}
+.monmenu a:hover {
+	background-color:gray;
+	
+}
+.monmenu2{
+	position:absolute;
+	width:1000px;
+	background-color:gray;
+	font-color:white;
+}
+
+.monmenu2 a:hover {
+       color:green;
+	
+}
+
+.btnleanmore{
+	background-color:#4CAF50;
+	color:white;
+	font-weight:bold;
+	padding:20px 50px;
+	border-radius:50px;
+	float:center;
+	
+	
+}
+
+
+input[type=button]{
+	background-color:#8f2fc2;
+	color:white;
+	font-weight:bold;
+	padding:20px 50px;
+	border-radius:50px;
+	float:center;
+	
+}
+input[type=text]{
+
+	border-radius:15px ;
+}
+
+input[type=submit]{
+	
+	background-color:#4CAF50;
+    color:white;
+	padding:12px 20px;
+	border-radius:50px;
+	cursor:pointer;
+	float:center;
+}
+
+
+.dropdown-item a:hover {
+	background-color: red;
+	}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+	}
+
+.dropdown:hover .dropbtn {
+	background-color: black;
+	}
+	
+.owl-carousel{}
+
+.owl-carousel .slide{
+	
+	height:180px;
+}
+.owl-carousel img{
+	width:100%;
+	height:100%;
+}
+
+.owl-carousel .slide2{
+
+	height:38px;
+	width:170px;
+}
+
+
+.col-12{
+	background-color:#f7f2f9;
+}
+.container body3{
+	background-color:red;
+} 
+.cleft{
+	height:500px;
+	background-color:white;
+	  box-shadow:  0 0 2em #ccc;
+} 
+
