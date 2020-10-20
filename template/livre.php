@@ -5,7 +5,7 @@ include "includes/database.php";
 if(@$_GET['id']!=""){
 $id_livre=$_GET['id'];
 
-$sql = "SELECT livre.titre,livre.id_livre,livre.genre,livre.logolivre,auteur.nom as auteur_name,
+$sql = "SELECT livre.titre,livre.id_livre,livre.genre,livre.logolivre,livre.description,livre.prix,livre.page,auteur.nom as auteur_name,
 editeur.nom as editeur_name,publier.date_publication                
 FROM livre,publier,auteur,editeur                
 WHERE publier.id_livre=livre.id_livre AND publier.id_auteur=auteur.id_auteur
@@ -47,12 +47,20 @@ WHERE publier.id_livre=livre.id_livre AND publier.id_auteur=auteur.id_auteur
 			$titre=$result['titre'];
 			$genre=$result['genre'];
 			$logo=$result['logolivre'];
+			$description=$result['description'];
+			$prix=$result['prix'];
+			$page=$result['page'];
 			$auteur=$result['auteur_name'];
 			$editeur=$result['editeur_name'];
 			$publier=$result['date_publication'];
+		    $emprunter=$result['emprunter'];
+
 		}	
 
+
+
 ?>
+
 
 <html>
 <br/>
@@ -66,15 +74,20 @@ WHERE publier.id_livre=livre.id_livre AND publier.id_auteur=auteur.id_auteur
 		   <img class="card-img-top" src="uploads/<?php echo $logo;?>" alt="Card image cap">
            <div class="card-body">
            <h5 class="card-title"><?php echo $titre;?></h5>
+		   <p class="card-text"><?php echo $description;?></p>
+		   <p class="card-text"><?php echo $prix;?></p>
            <p class="card-text"><?php echo $auteur;?></p>
 		   <p class="card-text"><?php echo $editeur;?></p>
-		   <p class="card-text">description</p>
+		   
            <p class="card-text"><small class="text-muted"><?php echo $publier;?></small></p>
            </div>
-		   <a href="">
-		   <button class="btn btn-success" type="button" >Borrow</button>
+		   
+		   
+		   <a href="?id='.$emprunter['id_emprunter'].'&page=emprunter">
+		   <button class="btn btn-success" type="button" ><?php echo $emprunter;?>Borrow</button>
                 </a>
            </div>
     </div>
  </div>
+
 </html>  

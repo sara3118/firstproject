@@ -5,7 +5,7 @@ include "security/secure.php";
     include "includes/database.php";
     include "includes/functions.php";	
 			
-   if(@$_POST['titre']!="" && @$_POST['genre']!="" && @$_POST['id_bibliotheque']!="" ){
+   if(@$_POST['titre']!="" && @$_POST['genre']!="" &&@$_POST['description']!="" &&@$_POST['prix']!=""&&@$_POST['page']!=""&& @$_POST['id_bibliotheque']!="" ){
 
 		  
 		//--------database parameters
@@ -21,6 +21,10 @@ include "security/secure.php";
 			$id_bibliotheque=$_POST['id_bibliotheque'];
 			
 			 $logolivre=uploadfile('logolivre',true);
+			 
+			 $description=$_POST['description'];
+			  $prix=$_POST['prix'];
+			   $page=$_POST['page'];
 			
 			
            try{
@@ -31,9 +35,13 @@ include "security/secure.php";
 				$paramslivre=array(':titre' => $titre,
 				':genre' => $genre,
 				':id_bibliotheque'=>$id_bibliotheque,
+				':description' => $description,
+				':prix' => $prix,
+				':page' => $page,
 				':logolivre' => $logolivre);
+				
 			
-			            $sql = "INSERT INTO livre(titre,id_bibliotheque,genre,logolivre) VALUE (:titre,:id_bibliotheque,:genre,:logolivre)";
+			            $sql = "INSERT INTO livre(titre,id_bibliotheque,genre,logolivre,description,prix,page) VALUE (:titre,:id_bibliotheque,:genre,:logolivre,:description,:prix,:page)";
 					
 				$anyname= $dbco->prepare( $sql);	
 				

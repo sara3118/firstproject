@@ -47,5 +47,10 @@ $route=["auteur"=>"../auteur.php",
 "updateclient"=>"../updateclient.php",
 "deleteclient"=>"../deleteclient.php",
 "formupdateclient"=>"../formupdateclient.php",
+
+"emprunter"=>"../emprunter.php",
+"emprunterlist"=>"../emprunterlist.php",
+
+
 ]
 ?>

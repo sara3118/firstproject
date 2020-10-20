@@ -214,11 +214,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Auteur</p>
                 </a>
               </li>
+			  <li class="nav-item">
+                <a href="?page=emprunterlist" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Emprunter</p>
+                </a>
+              </li>
 			  
 			  
 		  
           <li class="nav-item">
-            <a href="../login/logout.php" class="nav-link active">
+            <a href="../login/logout.php" class="nav-link ">
               <i class="nav-icon fas fa-th"></i>
               <p>Logout</p>
                 <span class="right badge badge-danger">Dis</span>

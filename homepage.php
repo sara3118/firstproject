@@ -53,6 +53,16 @@ session_start();
 			  // require 'copie.php';
 		   
            
+				
+				
+				else if($page=="emprunter"){
+					include'emprunter.php';
+				}
+				
+				else if($page=="emprunterlist"){
+					include'emprunterlist.php';
+				}
+		   
 	?>
 		
 		

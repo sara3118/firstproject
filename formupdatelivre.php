@@ -14,6 +14,8 @@ $sql = "select *  FROM livre WHERE id_livre=$id_livre";
 			$id_bibliotheque=$result['id_bibliotheque'];
 			$titre=$result['titre'];
 			$genre=$result['genre'];
+			$description=$result['description'];
+			$prix=$result['prix'];
 			$logo=$result['logolivre'];
 
 $sql = "select id_bibliotheque, nom FROM bibliotheque";
@@ -65,6 +67,15 @@ $sql = "select id_bibliotheque, nom FROM bibliotheque";
             <div class="c100">
                 <label for="genre">Genre : </label>
                 <input type="text" id="genre" name="genre" value="<?php echo $genre;?>">
+            </div>
+			
+			 <div class="c100">
+                <label for="description">Description : </label>
+                <input type="text" id="description" name="description" value="<?php echo $description;?>">
+            </div>
+			 <div class="c100">
+                <label for="prix">Prix : </label>
+                <input type="text" id="prix" name="prix" value="<?php echo $prix;?>">
             </div>
                <div class="c100">
                 <label for="logolivre">Logo livre : </label>

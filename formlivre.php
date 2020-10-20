@@ -94,6 +94,22 @@ include "security/secure.php";
                 <input type="file" id="logo" name="logolivre" >  <img class='tabimg' src="<?php echo @$logo;?> "/>
             </div>
 			
+			
+			<div class="c100">
+                <label for="decription">Description : </label>
+                <input type="text" id="description" name="description" value="<?php echo @description;?>">
+            </div>
+			
+			<div class="c100">
+                <label for="prix">Prix : </label>
+                <input type="text" id="prix" name="prix" value="<?php echo @prix;?>">
+            </div>
+			<div class="c100">
+                <label for="page">Page : </label>
+                <input type="text" id="page" name="page" value="<?php echo @page;?>">
+            </div>
+			
+			
 			<div class="c100">
                 <label for="auteur">Auteur :</label>
                 <select id="id_auteur" name="id_auteur">  <!-- liste déroulante des auteurs disponibles-->

@@ -1,4 +1,4 @@
- <?php
+<?php
 @session_start();
 
 include "security/secure.php";
@@ -7,14 +7,14 @@ include "includes/define.php";
  <!DOCTYPE html>
 <html>
     <head>
-        <title>LIVRE LIST</title>
+        <title>EMPRUNTER LIST</title>
         <meta charset='utf-8'>
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
            <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
           <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
     <body>
-        <h1>LIVRE LIST</h1> 
+        <h1>EMPRUNTER LIST</h1> 
 		<style>
 	.custab{
     border: 1px solid #ccc;
@@ -35,7 +35,7 @@ include "includes/define.php";
 	
 <div class="container">
     <div class="row col-md-6 col-md-offset-2 custyle">
-<a class='btn btn-success btn-xs' href='?page=formlivre'><span class='glyphicon glyphicon-add'></span> Ajouter</a>
+<a class='btn btn-success btn-xs' href='?page=emprunter'><span class='glyphicon glyphicon-add'></span> Ajouter</a>
 <table class="table table-striped custab"> 		
         <?php
              include "includes/database.php";
@@ -46,33 +46,37 @@ include "includes/define.php";
                 
                 /*Sélectionne les valeurs dans les colonnes prenom et mail de la table
                  *users pour chaque entrée de la table*/
-                $sth = $dbco->prepare("SELECT livre.titre,livre.id_livre,livre.genre,livre.logolivre,livre.description,livre.prix,livre.page,auteur.nom as autor_name,editeur.nom as editor_name
-FROM livre,publier,auteur,editeur
-WHERE publier.id_livre=livre.id_livre
-AND publier.id_auteur=auteur.id_auteur
-AND publier.id_editeur=editeur.id_editeur");
+                $sth = $dbco->prepare("SELECT emprunter.id_livre,emprunter.id_client,emprunter.id_emprunter,livre.titre,client.nom,client.telephone
+FROM emprunter,livre,client
+WHERE emprunter.id_livre=livre.id_livre
+AND emprunter.id_client=client.id_client
+AND emprunter.id_emprunter=emprunter.id_emprunter");
                 $sth->execute();
                 
                 /*Retourne un tableau associatif pour chaque entrée de notre table
                  *avec le nom des colonnes sélectionnées en clefs*/
                 $result = $sth->fetchAll(PDO::FETCH_ASSOC);
                 
-				foreach ($result as $row => $livre) {
+				foreach ($result as $row => $emprunter) {
 					
 					     echo "<tr>";
 						
-						echo "<td>". $livre['titre']."</td>";
-						echo "<td>". $livre['genre']."</td>";
-						echo "<td > <img src='../uploads/". $livre['logolivre']."'></img></td>";
-						echo "<td>". $livre['autor_name']."</td>";
-						echo "<td>". $livre['editor_name']."</td>";
-						echo "<td>". $livre['description']."</td>";
-						echo "<td>". $livre['prix']."</td>";
-						echo "<td>". $livre['page']."</td>";
+						echo "<td>". $emprunter['nom']."</td>";
+						
+						echo "<td>". $emprunter['telephone']."</td>";
+
+
+						echo "<td>". $emprunter['titre']."</td>";
 						
 						
-						echo "<td> <a class='btn btn-info btn-xs' href='?page=formupdatelivre&id=".$livre['id_livre']."'><span class='glyphicon glyphicon-edit'></span> Edit</a>";
-						echo "<td> <a class='btn btn-danger btn-xs' href='".$route['deletelivre']."?id=".$livre['id_livre']."'><span class='glyphicon glyphicon-remove'></span> Delete</a>";
+						
+
+
+					
+						
+						
+						//echo "<td> <a class='btn btn-info btn-xs' href='?page=formupdatelivre&id=".$livre['id_livre']."'><span class='glyphicon glyphicon-edit'></span> Edit</a>";
+						//echo "<td> <a class='btn btn-danger btn-xs' href='".$route['deletelivre']."?id=".$livre['id_livre']."'><span class='glyphicon glyphicon-remove'></span> Delete</a>";
 						
 
 				
@@ -95,5 +99,7 @@ AND publier.id_editeur=editeur.id_editeur");
 		
 		</table>
     </div>
+	</div>
+	</div>
     </body>
 </html>

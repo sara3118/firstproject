@@ -8,7 +8,7 @@
 		try{
                 
                 
-                $sth = $dbco->prepare("SELECT livre.titre,livre.id_livre,livre.genre,livre.logolivre,auteur.nom as autor_name,editeur.nom as editor_name
+                $sth = $dbco->prepare("SELECT livre.titre,livre.id_livre,livre.genre,livre.logolivre,livre.description,livre.prix,livre.page,auteur.nom as autor_name,editeur.nom as editor_name
 FROM livre,publier,auteur,editeur
 WHERE publier.id_livre=livre.id_livre
 AND publier.id_auteur=auteur.id_auteur
@@ -28,6 +28,9 @@ AND publier.id_editeur=editeur.id_editeur");
            echo'<div class="card-body">';
            echo'<h5 class="card-title">'.$livre['titre'].'</h5>';
            echo'<p class="card-text">'.$livre['genre'].'</p>';
+		   echo'<p class="card-text">'.$livre['description'].'</p>';
+			echo'<p class="card-text">'.$livre['prix'].'</p>';
+			echo'<p class="card-text">'.$livre['page'].'</p>';
            echo'<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>';
 		   
 		   echo'<a class="btn btn-success" href="?id='.$livre['id_livre'].'&page=livre">Details</a>';
