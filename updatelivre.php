@@ -11,6 +11,9 @@
 		$id_bibliotheque=$_POST['id_bibliotheque'];
 		$titre=$_POST['titre'];
 		$genre=$_POST['genre'];
+		$description=$_POST['description'];
+		$prix=$_POST['prix'];
+		$page=$_POST['page'];
 		$logo=uploadfile('logolivre',true);//$_POST['logo'];
 		$id_auteur=$_POST['id_auteur'];
 		$id_editeur=$_POST['id_editeur'];
@@ -19,13 +22,16 @@
 		
 try{
 
-$sql = "UPDATE livre set titre=:titre, id_bibliotheque=:id_bibliotheque, genre=:genre, logolivre=:logo WHERE id_livre=$id_livre";
+$sql = "UPDATE livre set titre=:titre, id_bibliotheque=:id_bibliotheque, genre=:genre,description=:description,prix=:prix,page=:page, logolivre=:logo WHERE id_livre=$id_livre";
 
 $params=array(':id_bibliotheque' => $id_bibliotheque,
 
                                     ':titre' => $titre,
 
                                     ':genre' => $genre,
+									':description' => $description,
+									':prix' => $prix,
+									':page' => $page,
 
 									':logo' => $logo         
 
