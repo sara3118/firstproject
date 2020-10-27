@@ -1,9 +1,9 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 13 oct. 2020 à 13:37
+-- Généré le : mar. 27 oct. 2020 à 15:30
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.10
 
@@ -45,7 +45,8 @@ INSERT INTO `auteur` (`id_auteur`, `nom`, `prenom`, `nationalite`) VALUES
 (5, 'DO', 'deda', 'fr'),
 (6, 'SARITA', 'SARITA', 'egypt'),
 (10, 'SOMEBODY', 'SOMEBODY', 'AMRICAIN'),
-(14, 'AUTEUR09', 'AUTEUR', 'CUBA');
+(14, 'AUTEUR09', 'AUTEUR', 'CUBA'),
+(15, 'Serre', ' Frédéric ', 'française');
 
 -- --------------------------------------------------------
 
@@ -71,8 +72,9 @@ INSERT INTO `bibliotheque` (`id_bibliotheque`, `nom`, `adresse`, `telephone`) VA
 (5, 'MIMI LIBRARY', '22 ALLEE DE BATELIERS\r\n93110 ROSNY SOUS BOIS', '01 21 34 45 56'),
 (6, 'SAFIA LIBRARY', '40 AVENUE DE LA RANCUNE\r\n95100 ARGENTEUIL', '01 24 46 68 80'),
 (7, 'NANALIBRARY', '62 BOULEVARD DE LA FIERTE93110 ROSNY SOUS BOIS', '01 64 42 88 00'),
-(16, 'ASL31', 'CESSON', '0734883883'),
-(19, 'CREATION', 'CESSON', '669999');
+(16, 'ASL', 'CESSON', '0734883883'),
+(19, 'CREATION', 'CESSON', '669999'),
+(24, 'LARAETLANA', 'NANTEUIL', '0224421');
 
 -- --------------------------------------------------------
 
@@ -94,14 +96,13 @@ CREATE TABLE `client` (
 INSERT INTO `client` (`id_client`, `nom`, `prenom`, `telephone`) VALUES
 (1, 'DOUADI', 'Sonia', '06 07 08 09 00'),
 (2, 'SCHOENARTS', 'Matthias', '06 05 04 03 02'),
-(3, 'GAMAL', 'Sara', ''),
 (4, 'GAMAL', 'Sara', ''),
 (5, 'DIDA', 'Didi', '131331'),
-(6, 'lana', 'lana', '444'),
-(8, 'LANA', 'lana', '88'),
 (10, 'AHMED', 'AHMED', '3635'),
 (13, 'ADAM', 'ADAM', '232'),
-(14, 'CLIENT1', 'CLIENT1', '11111');
+(14, 'CLIENT1', 'CLIENT1', '11111'),
+(16, 'ABDALLAH', 'LARA', '333333'),
+(17, 'BEDO', 'lana', '444');
 
 -- --------------------------------------------------------
 
@@ -148,7 +149,9 @@ CREATE TABLE `emprunter` (
 --
 
 INSERT INTO `emprunter` (`date_emprunt`, `id_client`, `id_livre`, `id_emprunter`) VALUES
-('2020-09-18', 2, 4, 4);
+('2020-09-18', 2, 4, 4),
+('2020-10-20', 2, 1, 5),
+('2020-10-30', 10, 121, 6);
 
 -- --------------------------------------------------------
 
@@ -174,51 +177,41 @@ CREATE TABLE `livre` (
   `id_bibliotheque` int(11) NOT NULL,
   `titre` varchar(200) NOT NULL,
   `genre` varchar(200) NOT NULL,
-  `logolivre` varchar(200) NOT NULL
+  `logolivre` varchar(200) NOT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `prix` int(200) DEFAULT NULL,
+  `page` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `livre`
 --
 
-INSERT INTO `livre` (`id_livre`, `id_bibliotheque`, `titre`, `genre`, `logolivre`) VALUES
-(1, 2, 'L\'étranger', 'Littérature française', ''),
-(2, 1, 'Caligula', 'Littérature française', ''),
-(3, 16, 'Correspondance', 'Littérature française', 'project-4.jpg'),
-(4, 2, 'Contes de la folie ordinaire', 'Littérature américaine', ''),
-(5, 1, 'La peste', 'Littérature française', ''),
-(11, 2, 'PICASO', 'ARABE', ''),
-(15, 6, 'conversations', 'English', '800.jpg'),
-(16, 2, 'gggggggg', 'English', '90.jpg'),
-(17, 5, 'mega', 'fr', '100.jpg'),
-(18, 5, 'mega', 'fr', '200.jpg'),
-(19, 7, 'van gogh', 'anglais', 'image-02-510x419.png'),
-(21, 7, 'rembrante', 'holand', 'partner-2-133x38.png'),
-(22, 6, 'SELVADOR DALY', 'ANGLAIS', ''),
-(24, 6, 'SELVADOR DALY', 'ANGLAIS', 'im1.png'),
-(25, 6, ' DALY6', 'ALMANDE', 'partner-3-180x45.png'),
-(31, 5, 'SARITA', 'PHARONE', ''),
-(43, 16, 'my story', 'english', ''),
-(57, 2, 'My story 2', 'french', ''),
-(63, 7, 'STORIES', 'ENGLISH', 'alfa-.jpg'),
-(65, 16, 'my story', 'english', ''),
-(80, 16, 'MY GUEST', 'LAST ONE', ''),
-(90, 2, 'EMMENEZ MOI', 'FRANCAISE', ''),
-(91, 2, 'L4HH', 'FRANCAISE', 'unnamed.gif'),
-(92, 2, 'L4HH', 'FRANCAISE', '3.gif'),
-(93, 7, 'MEME', 'MEME', 'flower.jpg'),
-(95, 16, 'jojo', 'td', 'uploads/bg0.jpg'),
-(96, 16, 'my story', 'english', 'uploads/01.jpg'),
-(97, 2, 'my story 1', 'english', 'uploads/1.jpg'),
-(98, 16, 'my story 1', 'english', 'uploads/logo.png'),
-(102, 16, 'bestcanadian', 'best', 'uploads/best canadian-1 .jpg'),
-(103, 5, 'REMY', 'reading', 'uploads/im.jpg'),
-(104, 5, 'REMY', 'reading', 'uploads/alfa-.jpg'),
-(108, 1, 'FAVO', 'POLITIQUE', 'uploads/index.jpg'),
-(111, 16, 'SALSA', 'AR', 'uploads/project-4.jpg'),
-(113, 16, 'LARA', 'READING', ''),
-(114, 19, 'CREATION', 'DREAWING', ''),
-(116, 16, 'MUSIQUE', 'MUSIQUE', '');
+INSERT INTO `livre` (`id_livre`, `id_bibliotheque`, `titre`, `genre`, `logolivre`, `description`, `prix`, `page`) VALUES
+(1, 2, 'L\'étranger', 'Littérature française', '', NULL, NULL, NULL),
+(4, 2, 'Contes de la folie ordinaire', 'Littérature américaine', '', NULL, NULL, NULL),
+(5, 1, 'La peste', 'Littérature française', '', NULL, NULL, NULL),
+(15, 6, 'conversations', 'English', '800.jpg', NULL, NULL, NULL),
+(16, 2, 'gggggggg', 'English', '90.jpg', NULL, NULL, NULL),
+(17, 5, 'mega', 'fr', '100.jpg', NULL, NULL, NULL),
+(18, 5, 'mega', 'fr', '200.jpg', NULL, NULL, NULL),
+(24, 6, 'SELVADOR DALY', 'ANGLAIS', 'im1.png', NULL, NULL, NULL),
+(43, 16, 'my story', 'english', '', NULL, NULL, NULL),
+(57, 2, 'My story 2', 'french', '', NULL, NULL, NULL),
+(65, 16, 'my story', 'english', '', NULL, NULL, NULL),
+(80, 16, 'MY GUEST', 'LAST ONE', '', NULL, NULL, NULL),
+(91, 2, 'L4HH', 'FRANCAISE', 'unnamed.gif', NULL, NULL, NULL),
+(92, 2, 'L4HH', 'FRANCAISE', '3.gif', NULL, NULL, NULL),
+(93, 7, 'MEME', 'MEME', 'flower.jpg', NULL, NULL, NULL),
+(95, 16, 'jojo', 'td', 'uploads/bg0.jpg', NULL, NULL, NULL),
+(96, 16, 'my story', 'english', 'uploads/01.jpg', NULL, NULL, NULL),
+(97, 2, 'my story 1', 'english', 'uploads/1.jpg', NULL, NULL, NULL),
+(98, 16, 'my story 1', 'english', 'uploads/logo.png', NULL, NULL, NULL),
+(103, 5, 'REMY', 'reading', 'uploads/im.jpg', NULL, NULL, NULL),
+(104, 5, 'REMY', 'reading', 'uploads/alfa-.jpg', NULL, NULL, NULL),
+(119, 24, 'correspondances', 'literatur française', '', 'any describ', 50, NULL),
+(121, 2, 'STELLA STONE', 'READERS', 'uploads/5f8c6262b54fe-FB_IMG_1591969208550.jpg', 'description', 90, '300'),
+(125, 19, 'le pouvoir des sens', 'psychiatrique', 'uploads/5f8f1c1aa3161-FB_IMG_1594551823270.jpg', 'l’utilisation des systèmes sensoriels', 10, '50');
 
 -- --------------------------------------------------------
 
@@ -239,26 +232,9 @@ CREATE TABLE `publier` (
 --
 
 INSERT INTO `publier` (`id_editeur`, `id_auteur`, `id_livre`, `id_publier`, `date_publication`) VALUES
-(90, 2, 3, 1, '2021-01-31'),
-(90, 2, 3, 2, '2021-01-31'),
-(1, 2, 2, 3, '2020-09-01'),
-(1, 3, 11, 11, '2020-10-27'),
-(88, 2, 31, 12, '2021-07-20'),
-(88, 2, 90, 22, '2020-10-04'),
-(88, 1, 25, 30, '2020-10-04'),
-(90, 2, 3, 33, '2021-01-31'),
-(1, 2, 22, 55, '2020-10-31'),
-(1, 3, 63, 87, '2021-01-10'),
-(88, 2, 90, 90, '2020-10-15'),
-(88, 1, 11, 93, '2020-10-01'),
-(1, 2, 19, 111, '2020-11-13'),
-(1, 1, 21, 311, '2021-01-31'),
-(90, 2, 102, 315, '2020-10-31'),
-(1, 2, 108, 319, '2020-11-05'),
-(88, 2, 111, 322, '2020-10-08'),
-(93, 6, 113, 324, '2020-10-14'),
-(96, 3, 114, 325, '2020-10-05'),
-(91, 5, 116, 327, '2020-10-22');
+(93, 3, 119, 330, '2020-10-08'),
+(1, 1, 121, 332, '2021-01-24'),
+(94, 15, 125, 336, '2018-10-03');
 
 -- --------------------------------------------------------
 
@@ -296,7 +272,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_users`, `prenom`, `email`, `age`, `password`, `sex`, `pays`, `role`) VALUES
 (29, 'Sara', 'selawady311@hotmail.com', 10, 'sara311', 'homme', 'canada', 'admin'),
-(37, 'amany', 'emy@gfg.fr', 22, 'sss', 'femme', 'france', 'admin');
+(37, 'amany', 'emy@gfg.fr', 22, 'sss', 'femme', 'france', 'admin'),
+(53, 'LANA', 'LANA311@hotmail.com', 33, 'FDF', 'femme', 'togo', 'admin'),
+(54, 'LARA', 'LARA311@hotmail.com', 35, 'DF', 'femme', 'suisse', 'admin');
 
 --
 -- Index pour les tables déchargées
@@ -378,19 +356,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `auteur`
 --
 ALTER TABLE `auteur`
-  MODIFY `id_auteur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_auteur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `bibliotheque`
 --
 ALTER TABLE `bibliotheque`
-  MODIFY `id_bibliotheque` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_bibliotheque` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT pour la table `editeur`
@@ -402,19 +380,19 @@ ALTER TABLE `editeur`
 -- AUTO_INCREMENT pour la table `emprunter`
 --
 ALTER TABLE `emprunter`
-  MODIFY `id_emprunter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_emprunter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `livre`
 --
 ALTER TABLE `livre`
-  MODIFY `id_livre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id_livre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT pour la table `publier`
 --
 ALTER TABLE `publier`
-  MODIFY `id_publier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=328;
+  MODIFY `id_publier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=337;
 
 --
 -- AUTO_INCREMENT pour la table `rendre`
@@ -426,7 +404,7 @@ ALTER TABLE `rendre`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- Contraintes pour les tables déchargées
