@@ -31,7 +31,7 @@
                               <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
                            </div>
                            <div class="form-group">
-                              <p class="text-center"><?php echo $_SESSION["error_message"];?></a></p>
+                              <p class="text-center"><?php echo @$_SESSION["error_message"];?></a></p>
                            </div>
                            <div class="col-md-12 text-center ">
                               <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>

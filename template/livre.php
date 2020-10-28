@@ -54,6 +54,7 @@ WHERE publier.id_livre=livre.id_livre AND publier.id_auteur=auteur.id_auteur
 			$editeur=$result['editeur_name'];
 			$publier=$result['date_publication'];
 		    $emprunter=$result['emprunter'];
+			  $id_livre=$result['id_livre'];
 
 		}	
 
@@ -83,7 +84,7 @@ WHERE publier.id_livre=livre.id_livre AND publier.id_auteur=auteur.id_auteur
            </div>
 		   
 		   
-		   <a href="?id='.$emprunter['id_emprunter'].'&page=emprunter">
+		   <a href="<?php echo "?id=".$id_livre."&page=emprunter";?>">
 		   <button class="btn btn-success" type="button" ><?php echo $emprunter;?>Borrow</button>
                 </a>
            </div>

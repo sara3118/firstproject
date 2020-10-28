@@ -1,7 +1,6 @@
 <?php
 	 include "includes/database.php";
  include "includes/define.php";
-include "security/secure.php";
 
 
 			
