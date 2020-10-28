@@ -1,8 +1,8 @@
 <?php
 @session_start();
 
-include "security/secure.php";
-include "includes/define.php";
+include "../security/secure.php";
+include "../includes/define.php";
 ?>
  <!DOCTYPE html>
 <html>

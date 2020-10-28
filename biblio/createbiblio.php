@@ -1,5 +1,5 @@
-<?ph
-@ session_start();
+<?php
+@session_start();
 
 include "../security/secure.php";
     include "../includes/database.php";
