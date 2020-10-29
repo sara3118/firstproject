@@ -56,11 +56,11 @@ session_start();
 				
 				
 				else if($page=="emprunter"){
-					include'emprunter.php';
+					include'emprunter/emprunter.php';
 				}
 				
 				else if($page=="emprunterlist"){
-					include'emprunterlist.php';
+					include'emprunter/emprunterlist.php';
 				}
 		   
 	?>

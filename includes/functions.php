@@ -3,7 +3,7 @@ function uploadfile($fieldName,$overwrite=false)
    {
 	   
 	    $uid=uniqid();
-		$target_dir = "uploads/";
+		$target_dir = "../uploads/";
 		$file_name = $uid."-".basename($_FILES[$fieldName]["name"]);
 		$target_file = $target_dir . $file_name;
 		$uploadOk = 1;
@@ -60,7 +60,7 @@ $check = getimagesize($_FILES[$fieldName]["tmp_name"]);
 		{
 			if (move_uploaded_file($_FILES[$fieldName]["tmp_name"], $target_file)) 
 			{
-				return $target_file;
+				return $file_name;
 	  
 			//  echo "The file ". htmlspecialchars( basename( $_FILES[$fieldName]["name"])). " has been uploaded.";
 			} 
