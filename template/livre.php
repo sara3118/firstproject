@@ -65,7 +65,7 @@ WHERE publier.id_livre=livre.id_livre AND publier.id_auteur=auteur.id_auteur
 
 <html>
 <br/>
-<br/><br/>
+
 <br/>
  <div class="row">
     <div class="col-12">
