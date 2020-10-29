@@ -4,7 +4,7 @@
 
 -<divclass="card-group">
 
-<input class="text" type="search" placeholder="Search" aria-label="Search">
+<input class="text" type="search"id="Search_livre"label="Search">
 <a class='btn btn-success btn-xs' href='?page=formlivre'><span class='glyphicon glyphicon-add'></span> Rechercher</a>
 <br/>
 <?php
