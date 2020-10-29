@@ -6,14 +6,24 @@
 <?php
     include "includes/database.php";  
 		try{
+			
+			$sth = $dbco->prepare("select distinct genre FROM livre");
+                $sth->execute();
+				$listeGenres= $sth->fetchAll(PDO::FETCH_ASSOC);
+
+			foreach ($listeGenres as $grow => $genre) {
+				echo $genre["genre"];
+				echo "<div class='container'> <div class='row'>";
                 
                 
                 $sth = $dbco->prepare("SELECT livre.titre,livre.id_livre,livre.genre,livre.logolivre,livre.description,livre.prix,livre.page,auteur.nom as autor_name,editeur.nom as editor_name
 FROM livre,publier,auteur,editeur
-WHERE publier.id_livre=livre.id_livre
+WHERE publier.id_livre=livre.id_livre 
 AND publier.id_auteur=auteur.id_auteur
-AND publier.id_editeur=editeur.id_editeur");
-                $sth->execute();
+AND publier.id_editeur=editeur.id_editeur and livre.genre=:genre");
+              
+			  $param=array("genre"=>$genre["genre"]);
+                $sth->execute($param);
                 
               
                 $result = $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -37,7 +47,12 @@ AND publier.id_editeur=editeur.id_editeur");
            echo'</div>';
            echo'</div>';
 		   echo'</div>';
-	}   
+	}  
+
+        echo'</div>';
+		   echo'</div>';
+	
+			}	
 	
             }
                   
