@@ -1,10 +1,12 @@
 <br/>
 <br/><br/>
 <br/><br/>
-<div class="card-group" >
+
+-<divclass="card-group">
 
 <input class="text" type="search" placeholder="Search" aria-label="Search">
 <a class='btn btn-success btn-xs' href='?page=formlivre'><span class='glyphicon glyphicon-add'></span> Rechercher</a>
+<br/>
 <?php
     include "includes/database.php";  
 		try{
