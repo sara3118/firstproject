@@ -13,17 +13,22 @@
 <input class="text" type="search"id="Search_livre"label="Search">
 <button type="submit" class="btn btn-info"><span class="fa fa-search"></span>Rechercher</button>
 <br/>
-
 <script>
 
-$(function() {
-    $("#search_livre").autocomplete({
-        source: "livre/livreapi.php",
-        select: function( event, ui ) {
-            event.preventDefault();
-            $("#search_livre").val(ui.item.titre);
-        }
-    });
+$( document ).ready(function() {
+	
+$("#search_livre").on('input',function(){
+alert('ok');});
+
+
+	$("#search_livre").autocomplete({
+			source: "livre/livreapi.php",
+			select: function( event, ui ) {
+					event.preventDefault();
+					$("#search_livre").val(ui.item.value);
+			},
+
+	});
 });
 
 
