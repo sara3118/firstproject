@@ -1,7 +1,7 @@
 <br/>
 <br/><br/>
 <br/><br/>
-<div class="card-group">
+<div class="card-group" >
 
 <input class="text" type="search" placeholder="Search" aria-label="Search">
 <a class='btn btn-success btn-xs' href='?page=formlivre'><span class='glyphicon glyphicon-add'></span> Rechercher</a>
@@ -9,7 +9,7 @@
     include "includes/database.php";  
 		try{
 			
-			$sth = $dbco->prepare("select distinct genre FROM livre");
+			$sth = $dbco->prepare("SELECT distinct genre FROM livre,publier where livre.id_livre=publier.id_livre");
                 $sth->execute();
 				$listeGenres= $sth->fetchAll(PDO::FETCH_ASSOC);
 
