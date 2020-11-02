@@ -1,24 +1,22 @@
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <!-- jQuery UI library -->
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <br/>
 <br/><br/>
 <br/><br/>
 
 -<divclass="card-group">
 
-<input class="text" type="search"id="Search_livre"label="Search">
+<input class="text" type="search"id="search_livre"label="search">
 <button type="submit" class="btn btn-info"><span class="fa fa-search"></span>Rechercher</button>
 <br/>
 <script>
 
 $( document ).ready(function() {
 	
-$("#search_livre").on('input',function(){
-alert('ok');});
+//$("#search_livre").on('input',function(){
+//alert('ok');});
 
 
 	$("#search_livre").autocomplete({
