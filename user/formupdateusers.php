@@ -47,7 +47,7 @@ else {
             </div>
             <div class="c100">
                 <label for="mail">Email : </label>
-                <input type="email" id="mail" name="mail"value="<?php echo @$email;?>">
+                <input type="email" id="email" name="email"value="<?php echo @$email;?>">
             </div>
             <div class="c100">
                 <label for="age">Age : </label>
