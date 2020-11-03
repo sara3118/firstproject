@@ -113,7 +113,7 @@ $(document).ready(function(){
 			
 		$.ajax({
 
-     url : 'traitement.php',
+     url : '../api/checkemail.php',
        type : 'GET',
 	   data:'email='+$("#email").val(),
 	   
@@ -157,7 +157,7 @@ $(document).ready(function(){
         		
 		$.ajax({
 
-     url : 'validatepassword.php',
+     url : '../api/validatepassword.php',
        type : 'GET',
 	   data:'password='+$("#password").val(),
 	   
