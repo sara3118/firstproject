@@ -1,0 +1,27 @@
+.container {
+	background-color:#cfcf;
+} 
+input[type=button]{
+	background-color:#8f2fc2;
+	color:white;
+	font-weight:bold;
+	padding:20px 50px;
+	border-radius:50px;
+	float:center;
+	width:70px;
+	
+}
+input[type=text]{
+
+	border-radius:15px ;
+}
+
+input[type=submit]{
+	
+	background-color:#4CAF50;
+    color:white;
+	padding:12px 20px;
+	border-radius:50px;
+	cursor:pointer;
+	float:center;
+}

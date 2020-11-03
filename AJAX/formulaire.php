@@ -1,4 +1,5 @@
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <!-- jQuery library -->
@@ -6,17 +7,79 @@
 <!-- Formulaire HTML super simple à sérialiser -->
 <link rel="stylesheet" href="../cssformulaire.css">
 
-
+<div class="container" style="background-color:#CEE3F6; border-radius:50px;">
+        <div class="row">
+			<div class="col-md-5 mx-auto">
+			<div id="first">
+				<div class="myform form ">
+					 <div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<h1>Formulaire</h1>
+						 </div>
+					</div>
 <form id="formulaire" method="POST" action="traitement.php">
-    Nom<input type="text" name="nom" /><br/>
-    Prenom<input type="text" name="prenom" /> <br/>
-    Email<input type="text" name="email" id="email" /> <span id='error_email' style="color:red"> </span><br/>
-    Password<input type="text" name="password" id="password" /><span id='error_password' style="color:red"> </span><br/>
-	Retypeassword<input type="text" name="repassword" id="repassword" />
 
-   <input type="submit" name="submit" />
+                         <div class="form-group">
+                              <label for="exampleInputNom1">Nom</label>
+                              <input type="text" name="nom"  class="form-control" id="nom" aria-describedby="nomHelp" placeholder="Enter name">
+                           </div>
+                         <div class="form-group">
+                              <label for="exampleInputPrenom">Prenom</label>
+                              <input type="text" name="prenom"  class="form-control" id="prenom" aria-describedby="emailPrenom" placeholder="Enter prenom">
+                           </div>
+						   <div class="c100">
+                <label for="age">Age : </label>
+                <input type="number" id="age" name="age" aria-describedby="age" placeholder="Enter age"value="<?php echo @$age;?>">
+            </div>
+			
+			  <div class="c100">
+                <input type="radio" id="femme" name="sexe" value="femme" <?php if(@$sex=="femme") echo "checked";?>>
+                <label for="femme">Femme</label>
+                <input type="radio" id="homme" name="sexe" value="homme" <?php if(@$sex=="homme") echo "checked";?>>
+                <label for="homme">Homme</label>
+                <input type="radio" id="autre" name="sexe" value="autre" <?php if(@$sex=="autre") echo "checked";?>>
+                <label for="autre">Autre</label>
+            </div>
+			
+			<div class="c100">
+                <label for="pays">Pays de résidence :</label>
+                <select id="pays" name="pays">
+                    <optgroup label="Europe">
+                        <option value="france">France</option>
+                        <option value="belgique">Belgique</option>
+                        <option value="suisse">Suisse</option>
+                    </optgroup>
+                    <optgroup label="Afrique">
+					    <option value="egypte">Egypte</option>
+                        <option value="algerie">Algérie</option>
+                        <option value="tunisie">Tunisie</option>
+                        <option value="maroc">Maroc</option>
+                        <option value="madagascar">Madagascar</option>
+                        <option value="benin">Bénin</option>
+                        <option value="togo">Togo</option>
+                    </optgroup>
+                    <optgroup label="Amerique">
+                        <option value="canada">Canada</option>
+                    </optgroup>
+                </select>
+            </div>
+						   <div class="form-group">
+                              <label for="exampleInputEmail1">Email address</label>
+                              <input type="text" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"><span id='error_email' style="color:red"> </span>
+                           </div>
+						   <div class="form-group">
+                              <label for="exampleInputpassword">Password</label>
+                              <input type="text" name="password" id="password"  class="form-control" aria-describedby="passwordHelp" placeholder="Enter Password"><span id='error_password' style="color:red"> </span>
+                           </div>
+						   <div class="form-group">
+                              <label for="exampleInputretypepassword">Retypeassword</label>
+                              <input type="text" id="retypepassword" name="retypepassword" class="form-control" aria-describedby="retypepasswordHelp" placeholder="retype Password">
+                           </div>
+                    <div class="col-md-12 text-center ">
+                              <button type="submit" class="mybtn btn-success tx-tfm">Submit</button>
+                           </div>
 </form>
-
+</div></div></div>
 
 
 <script>
@@ -107,6 +170,7 @@ $(document).ready(function(){
 
        }
 	   
+	   
 	   });
 	   
 	});
@@ -116,7 +180,26 @@ $(document).ready(function(){
 
 });
 
+$("#retypepassword").on("input",function(){
+				var $password= $("#password").val();
+				var $retypepassword= $("#retypepassword").val();
 
+									
+				if($password==$retypepassword)
+				{
+					$("#retypepassword").css({color :'green', borderColor :'green'});
+					$('#error_retypepassword').html("");
+				}
+				 
+				 else
+				 {
+						$("#retypepassword").css({color :'red', borderColor :'red'});
+						$('#error_retypepassword').html("password non indentiques");
+				}
+								
+								
+		});
+		
 
 
 </script>
